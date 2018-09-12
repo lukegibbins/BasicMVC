@@ -1,8 +1,6 @@
 ﻿@using ChillAndGrill.Models
 @model ChillAndGrill.Models.Restaurant
 
-@{int counter = 0;}
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,20 +12,27 @@
 
     <div>
         <form method="post">
-            <input type="text" name="Name" /> <!--the name attribute must be the value of the restaurant property it binds to. E.g restaurant.Name-->
-            <select name="Cuisine">
-                @foreach (CuisineType cuisineType in Enum.GetValues(typeof(CuisineType)))
-                {
-                    <option value="@counter">@cuisineType</option>
-                    counter++;
-                }
-            </select>
+            <div>
+                @Html.Label("Name")
+                <input type="text" name="Name" />
+                <span>@Html.ValidationMessage("Name")</span>
+            </div>
+
+            <div>
+                @Html.Label("Cuisine")
+                <select name="Cuisine">
+                    @foreach (CuisineType cuisineType in Enum.GetValues(typeof(CuisineType)))
+                    {
+                        <option value="@cuisineType">@cuisineType</option>
+                    }
+                </select>
+            </div>
             <input type="Submit" name="save" value="Save" />
+            @Html.AntiForgeryToken()
         </form>
     </div>
 
+    <br />
     <button>@Html.ActionLink("Home", "Index", "Home")</button>
-    @Html.AntiForgeryToken()
-
 </body>
 </html>

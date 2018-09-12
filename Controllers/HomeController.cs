@@ -52,15 +52,23 @@ namespace ChillAndGrill.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Restaurant restaurant)
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(RestaurantEditModel editModel)
         {
-            var newRestaurant = new Restaurant();
-            newRestaurant.Name = restaurant.Name;
-            newRestaurant.Cuisine = restaurant.Cuisine;
+            if (ModelState.IsValid)
+            {
+                var newRestaurant = new Restaurant();
+                newRestaurant.Name = editModel.Name;
+                newRestaurant.Cuisine = editModel.Cuisine;
 
-            newRestaurant = _restaurantData.Add(newRestaurant);
+                newRestaurant = _restaurantData.Add(newRestaurant);
 
-            return RedirectToAction(nameof(Details), new { id = newRestaurant.Id });
+                return RedirectToAction(nameof(Details), new { id = newRestaurant.Id });
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }
