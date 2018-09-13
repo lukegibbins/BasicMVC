@@ -21,3 +21,5 @@ C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill
 C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill\obj\MCD\Debug\netcoreapp2.1\ChillAndGrill.RazorTargetAssemblyInfo.cs
 C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill\obj\MCD\Debug\netcoreapp2.1\ChillAndGrill.Views.pdb
 C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill\obj\MCD\Debug\netcoreapp2.1\ChillAndGrill.csproj.CopyComplete
+C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill\obj\MCD\Debug\netcoreapp2.1\Razor\Views\Home\Create.g.cshtml.cs
+C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill\obj\MCD\Debug\netcoreapp2.1\Razor\Views\Home\Details.g.cshtml.cs
