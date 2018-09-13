@@ -48,7 +48,7 @@ using ChillAndGrill.Models;
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(96, 101, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f15a672b9ec9462480583e0f0bd88c6f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1e28ec79789d43f2b3426e33a940abd0", async() => {
                 BeginContext(102, 88, true);
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>Create</title>\r\n");
                 EndContext();
@@ -68,7 +68,7 @@ using ChillAndGrill.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(199, 841, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "771f842d9adf4130a07dc4172fe67f0c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "063dd829deff41aea735b0baa1c8c2ab", async() => {
                 BeginContext(205, 101, true);
                 WriteLiteral("\r\n    <h1>Create</h1>\r\n\r\n    <div>\r\n        <form method=\"post\">\r\n            <div>\r\n                ");
                 EndContext();

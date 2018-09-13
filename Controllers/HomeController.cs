@@ -53,7 +53,7 @@ namespace ChillAndGrill.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(RestaurantEditModel editModel)
+        public IActionResult Create(RestaurantEditModel editModel) //Posted request data binds to editModel
         {
             if (ModelState.IsValid)
             {
