@@ -1,38 +1,33 @@
 ﻿@using ChillAndGrill.Models
 @model ChillAndGrill.Models.Restaurant
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
-</head>
-<body>
-    <h1>Create</h1>
+@{ 
+    ViewBag.Title = "Create";
+}
 
-    <div>
-        <form method="post">
-            <div>
-                @Html.Label("Name")
-                <input type="text" name="Name" />
-                <span>@Html.ValidationMessage("Name")</span>
-            </div>
+<h1>Create</h1>
+<div>
+    <form method="post">
+        <div>
+            @Html.Label("Name")
+            <input type="text" name="Name" />
+            <span>@Html.ValidationMessage("Name")</span>
+        </div>
 
-            <div>
-                @Html.Label("Cuisine")
-                <select name="Cuisine">
-                    @foreach (CuisineType cuisineType in Enum.GetValues(typeof(CuisineType)))
-                    {
-                        <option value="@cuisineType">@cuisineType</option>
-                    }
-                </select>
-            </div>
-            <input type="Submit" name="save" value="Save" />
-            @Html.AntiForgeryToken()
-        </form>
-    </div>
+        <div>
+            @Html.Label("Cuisine")
+            <select name="Cuisine">
+                @foreach (CuisineType cuisineType in Enum.GetValues(typeof(CuisineType)))
+                {
+                    <option value="@cuisineType">@cuisineType</option>
+                }
+            </select>
+        </div>
+        <input type="Submit" name="save" value="Save" />
+        @Html.AntiForgeryToken()
+    </form>
+</div>
 
-    <br />
-    <button>@Html.ActionLink("Home", "Index", "Home")</button>
-</body>
-</html>
+<br />
+<button>@Html.ActionLink("Home", "Index", "Home")</button>
+

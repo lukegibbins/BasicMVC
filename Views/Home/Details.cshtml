@@ -1,5 +1,9 @@
 ﻿@model ChillAndGrill.Models.Restaurant
 
+@{ 
+    ViewBag.Title = Model.Name;
+}
+
 <h1>@Model.Name</h1>
 <br />
 
@@ -7,4 +11,4 @@
 <p>Id: @Model.Id</p>
 <p>Cuisine: @Model.Cuisine</p>
 
-<button>@Html.ActionLink("Home","Index","Home")</button>
+<button>@Html.ActionLink("Home", "Index", "Home")</button>

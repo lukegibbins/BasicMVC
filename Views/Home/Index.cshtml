@@ -1,24 +1,26 @@
 ﻿@model ChillAndGrill.ViewModels.HomeIndexViewModel
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Index</title>
-</head>
-<body>
-    <h1>@Model.CurrentMessage</h1>
-   <table>
-       @foreach(var restaurant in Model.Restaurants)
-       {
-       <tr>
-           <td>@restaurant.Name</td>
-           <td>@restaurant.Id</td>
-           <td>@Html.ActionLink("Go", "Details", "Home", new { restaurant.Id })</td>
-       </tr>
-       }
-   </table>
-    <br/>
-   <div>
-       <button>@Html.ActionLink("Add Restaurant", "Create", "Home")</button>
-   </div>
-</body>
-</html>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>All Restaurants - @DateTime.Now.Year</h1>
+<table>
+    @foreach (var restaurant in Model.Restaurants)
+    {
+        <tr>
+            <td>@restaurant.Name</td>
+            <td>@restaurant.Id</td>
+            <td>@Html.ActionLink("Go", "Details", "Home", new { restaurant.Id })</td>
+        </tr>
+    }
+</table>
+<br />
+<div>
+    <button>@Html.ActionLink("Add Restaurant", "Create", "Home")</button>
+</div>
+
+@section footer{ 
+    @Model.CurrentMessage
+}
+
