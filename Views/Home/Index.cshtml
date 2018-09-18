@@ -5,23 +5,18 @@
 }
 
 <h1>All Restaurants - @DateTime.Now.Year</h1>
-<table>
-    @foreach (var restaurant in Model.Restaurants)
-    {
-        <tr>
-            <td>@restaurant.Name</td>
-            <td>@restaurant.Id</td>
-            <td>@Html.ActionLink("Go", "Details", "Home", new { restaurant.Id })</td>
-            <td>@Html.ActionLink("Edit", "Update", "Home", new { restaurant.Id })</td>
-        </tr>
-    }
-</table>
-<br />
+
+@foreach (var restaurant in Model.Restaurants)
+{
+    @Html.Partial("_Summary", restaurant)
+}
+
 <div>
+    <br />
     <button>@Html.ActionLink("Add Restaurant", "Create", "Home")</button>
 </div>
 
-@section footer{ 
+@section footer{
     @Model.CurrentMessage
 }
 
