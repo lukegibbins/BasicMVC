@@ -14,5 +14,6 @@ namespace ChillAndGrill.Services
         IEnumerable<Restaurant> GetAllRestaurants();
         Restaurant GetSpecificRestaurant(int id);  //return type goes first in interfaces.
         Restaurant Add(Restaurant restaurant);
+        Restaurant Update(Restaurant restaurant);
     }
 }

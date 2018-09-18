@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 
 namespace ChillAndGrill.Controllers
 {
-   
+
     public class HomeController : Controller
     {
         private IRestaurantData _restaurantData; //reference to the requested list of restaurant data from startup/ConfigureServices
         private IGreeter _greeter;               // ""
+
+        [BindProperty]
+        public Restaurant restaurant { get; set; } //Another form of object binding
 
         public HomeController(IRestaurantData restaurantData, IGreeter greeter)
         {
@@ -22,7 +25,7 @@ namespace ChillAndGrill.Controllers
         }
 
         //Action method - Always use IAction result as the return type of an action/method in a controller.
-        public IActionResult Index() 
+        public IActionResult Index()
         {
             var model = new HomeIndexViewModel();
             model.Restaurants = _restaurantData.GetAllRestaurants();
@@ -69,6 +72,35 @@ namespace ChillAndGrill.Controllers
             {
                 return View();
             }
+        }
+
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            Restaurant model = _restaurantData.GetSpecificRestaurant(id);
+
+            if (model == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View(model);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Update()
+        {
+            if (ModelState.IsValid)
+            {
+                Restaurant boundRestaurant = restaurant;
+                _restaurantData.Update(boundRestaurant);
+                return RedirectToAction(nameof(Details), new { id = boundRestaurant.Id });
+            }
+
+            Restaurant originalModel = _restaurantData.GetSpecificRestaurant(restaurant.Id);
+            return View(originalModel);
         }
     }
 }

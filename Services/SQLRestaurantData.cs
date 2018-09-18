@@ -32,5 +32,13 @@ namespace ChillAndGrill.Services
         {
             return _context.Restaurants.FirstOrDefault(r => r.Id == id);
         }
+
+        public Restaurant Update(Restaurant restaurant)
+        {
+            _context.Attach(restaurant).State = Microsoft.EntityFrameworkCore.EntityState.Modified;        //Modify or update rather than a delete
+            _context.SaveChanges();
+            return restaurant;
+
+        }
     }
 }

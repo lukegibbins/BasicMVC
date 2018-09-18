@@ -25,3 +25,4 @@ C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill
 C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill\obj\Debug\netcoreapp2.1\ChillAndGrill.csproj.CopyComplete
 C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
 C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill\obj\Debug\netcoreapp2.1\Razor\Views\Home\Update.g.cshtml.cs
