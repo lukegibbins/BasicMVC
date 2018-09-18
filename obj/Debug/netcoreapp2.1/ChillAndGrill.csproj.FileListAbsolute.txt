@@ -27,3 +27,5 @@ C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill
 C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
 C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill\obj\Debug\netcoreapp2.1\Razor\Views\Home\Update.g.cshtml.cs
 C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill\obj\Debug\netcoreapp2.1\Razor\Views\Home\_Summary.g.cshtml.cs
+C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\Greeter\Default.g.cshtml.cs
+C:\Users\lukeg\Documents\Visual Studio 2017\Projects\ChillAndGrill\ChillAndGrill\obj\Debug\netcoreapp2.1\Razor\Pages\Greeting.g.cshtml.cs

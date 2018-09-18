@@ -1,5 +1,6 @@
 ﻿@model ChillAndGrill.ViewModels.HomeIndexViewModel
 
+
 @{
     ViewBag.Title = "Home Page";
 }
@@ -8,7 +9,7 @@
 
 @foreach (var restaurant in Model.Restaurants)
 {
-    @Html.Partial("_Summary", restaurant)
+    @Html.Partial("_Summary", restaurant);
 }
 
 <div>
