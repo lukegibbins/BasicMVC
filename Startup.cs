@@ -7,6 +7,7 @@ using ChillAndGrill.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -29,6 +30,9 @@ namespace ChillAndGrill
         // The below configuration is what is configured at startup 
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //Authentication Services and middleware...
+
             services.AddSingleton<IGreeter, Greeter>();
             services.AddDbContext<ChillAndGrillDBContext>
                 (options => options.UseSqlServer(_configuration.GetConnectionString("ChillAndGrillDBConnection"))); //DB setup...
@@ -49,8 +53,13 @@ namespace ChillAndGrill
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseRewriter(new RewriteOptions().AddRedirectToHttpsPermanent()); //States the site must redirect to HTTPS endpoint using SSL
+
             //Allows static files in wwwroot to be used and routed to. E.g //http://localhost:5000/index.html
             app.UseStaticFiles();
+
+            //Finds out the users identify using Azures OpenID connect
+            app.UseAuthentication();
 
             //Middleware added to use Mvc. This allows routing to occur using controller name and action name to produce a view
             app.UseMvc(ConfigureRoutes);
