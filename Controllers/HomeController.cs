@@ -1,6 +1,7 @@
 ﻿using ChillAndGrill.Models;
 using ChillAndGrill.Services;
 using ChillAndGrill.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ChillAndGrill.Controllers
 {
-
+    [Authorize]
     public class HomeController : Controller
     {
         private IRestaurantData _restaurantData; //reference to the requested list of restaurant data from startup/ConfigureServices
@@ -25,6 +26,7 @@ namespace ChillAndGrill.Controllers
         }
 
         //Action method - Always use IAction result as the return type of an action/method in a controller.
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var model = new HomeIndexViewModel();

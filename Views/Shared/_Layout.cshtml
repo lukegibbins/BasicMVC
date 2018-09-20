@@ -5,6 +5,12 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
+    <header>
+        @if (User.Identity.IsAuthenticated)
+        {
+          <p>@User.Identity.Name</p>
+        }
+    </header>
     <div>
         @RenderBody()
     </div>

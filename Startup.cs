@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using ChillAndGrill.Data;
 using ChillAndGrill.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -30,8 +32,18 @@ namespace ChillAndGrill
         // The below configuration is what is configured at startup 
         public void ConfigureServices(IServiceCollection services)
         {
+            //Configures authentication services/scheme using 'Cookies' with AzureAD
+            services.AddAuthentication(options =>
+                {
+                    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
+                }
+            ).AddOpenIdConnect(options =>
+            {
+                _configuration.Bind("AzureAd", options);
+            }).AddCookie();
 
-            //Authentication Services and middleware...
+
 
             services.AddSingleton<IGreeter, Greeter>();
             services.AddDbContext<ChillAndGrillDBContext>
@@ -42,7 +54,7 @@ namespace ChillAndGrill
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, 
+        public void Configure(IApplicationBuilder app,
                               IHostingEnvironment env,
                               IGreeter greeter,
                               ILogger<Startup> logger)
@@ -53,7 +65,8 @@ namespace ChillAndGrill
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRewriter(new RewriteOptions().AddRedirectToHttpsPermanent()); //States the site must redirect to HTTPS endpoint using SSL
+            //States the site must redirect to HTTPS endpoint using SSL
+            app.UseRewriter(new RewriteOptions().AddRedirectToHttpsPermanent());
 
             //Allows static files in wwwroot to be used and routed to. E.g //http://localhost:5000/index.html
             app.UseStaticFiles();
@@ -65,7 +78,7 @@ namespace ChillAndGrill
             app.UseMvc(ConfigureRoutes);
 
             //Setting an route /endpoint using a Path for the endpoint of 'wp'
-              app.UseWelcomePage(new WelcomePageOptions
+            app.UseWelcomePage(new WelcomePageOptions
             {
                 Path = "/wp"
             });
