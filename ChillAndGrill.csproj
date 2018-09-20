@@ -5,12 +5,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\Scripts\node_modules\**" />
+    <Compile Remove="wwwroot\Scripts\obj\**" />
+    <Content Remove="wwwroot\Scripts\node_modules\**" />
+    <Content Remove="wwwroot\Scripts\obj\**" />
+    <EmbeddedResource Remove="wwwroot\Scripts\node_modules\**" />
+    <EmbeddedResource Remove="wwwroot\Scripts\obj\**" />
+    <None Remove="wwwroot\Scripts\node_modules\**" />
+    <None Remove="wwwroot\Scripts\obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.1.1"></DotNetCliToolReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Scripts\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties Properties_4launchSettings_1json__JSONSchema="http://json.schemastore.org/mycode" /></VisualStudio></ProjectExtensions>

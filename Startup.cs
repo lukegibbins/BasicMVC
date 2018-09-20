@@ -84,12 +84,6 @@ namespace ChillAndGrill
             });
 
             //Default routing. (This will run if no endpoint is found)
-            app.Run(async (context) =>
-            {
-                logger.LogInformation("*****Default page reached*****");
-                var greeting = greeter.GetMessageOfTheDay();
-                await context.Response.WriteAsync($" {greeting}: {env.EnvironmentName}"); //String interpolation
-            });
         }
 
         //Routing configuration setup

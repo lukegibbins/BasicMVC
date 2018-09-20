@@ -2,13 +2,14 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/scripts/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
     <header>
         @if (User.Identity.IsAuthenticated)
         {
-          <p>@User.Identity.Name</p>
+            <p>@User.Identity.Name</p>
         }
     </header>
     <div>
@@ -17,5 +18,7 @@
     <footer>
         @await Component.InvokeAsync("Greeter")
     </footer>
+    <script src="~/scripts/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="~/scripts/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

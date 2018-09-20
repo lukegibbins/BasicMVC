@@ -14282,7 +14282,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "Microsoft.AspNetCore.ALL >= 2.1.1",
+      "Microsoft.AspNetCore.All >= 2.1.1",
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.1"
     ]
@@ -14328,7 +14328,7 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
-          "Microsoft.AspNetCore.ALL": {
+          "Microsoft.AspNetCore.All": {
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.1, )",
