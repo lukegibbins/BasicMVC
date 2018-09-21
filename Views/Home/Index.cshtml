@@ -5,16 +5,19 @@
     ViewBag.Title = "Home Page";
 }
 
-<h1>All Restaurants - @DateTime.Now.Year</h1>
-
-@foreach (var restaurant in Model.Restaurants)
-{
-    @Html.Partial("_Summary", restaurant);
-}
-
+<div><h1>All Restaurants - @DateTime.Now.Year</h1></div>
+<br />
 <div>
-    <br />
-    <button>@Html.ActionLink("Add Restaurant", "Create", "Home")</button>
+    @foreach (var restaurant in Model.Restaurants)
+    {
+        @Html.Partial("_Summary", restaurant);
+        <br />
+    }
 </div>
+
+    <div>
+        <br />
+        <button>@Html.ActionLink("Add Restaurant", "Create", "Home")</button>
+    </div>
 
 
