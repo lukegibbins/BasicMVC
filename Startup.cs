@@ -70,6 +70,9 @@ namespace ChillAndGrill
 
             //Allows static files in wwwroot to be used and routed to. E.g //http://localhost:5000/index.html
             app.UseStaticFiles();
+            
+            //Allows node to be accessed
+            app.UseNodeModules(env);
 
             //Finds out the users identify using Azures OpenID connect
             app.UseAuthentication();

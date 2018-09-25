@@ -2,23 +2,32 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link href="~/scripts/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <header>
-        @if (User.Identity.IsAuthenticated)
-        {
-            <p>Username: @User.Identity.Name</p>
-        }
-    </header>
+
+    <nav class="navbar navbar-default">
+        <div class="container=fluid">
+            <div class="navbar-header">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="navbar-right">
+                    <p>Username: @User.Identity.Name</p>
+                    </div>
+                }
+                <a class="navbar-brand">Chill and Grill</a>
+            </div>
+        </div>
+    </nav>
+
     <div>
         @RenderBody()
     </div>
     <footer>
         @await Component.InvokeAsync("Greeter")
     </footer>
-    <script src="~/scripts/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="~/scripts/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="~/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
